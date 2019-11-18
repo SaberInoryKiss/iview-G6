@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-08-27 15:22:35
- * @LastEditTime: 2019-11-15 16:28:38
+ * @LastEditTime: 2019-11-18 15:11:45
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -169,13 +169,13 @@ export default {
     /* 去除浮动 */
     overflow:hidden;
     /* css linear-gradient() 函数 渐变色从左到右 */
-    /* background: -webkit-linear-gradient(left, #4ABFFF, #3733E4);
+    background: -webkit-linear-gradient(left, #4ABFFF, #3733E4);
     background: -o-linear-gradient(right, #4ABFFF, #3733E4);
     background: -moz-linear-gradient(right, #4ABFFF, #3733E4);
-    background: linear-gradient(to right, #4ABFFF, #3733E4); */
-    background: url('~@/assets/bg7.png') no-repeat;
+    background: linear-gradient(to right, #4ABFFF, #3733E4);
+    /* background: url('~@/assets/bg7.png') no-repeat;
     background-position: 75% 25%;
-    background-size:cover;
+    background-size:cover; */
 }
 .sign_bg {
     width:100%;

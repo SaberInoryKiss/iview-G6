@@ -4,7 +4,6 @@
       <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">
         <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
         <div class="logo-con">
-          <!--云澳达IMSC-->
           <img v-show="!collapsed" :src="maxLogo" key="max-logo" class="mian-logo-img"/>
           <img v-show="collapsed" :src="minLogo" key="min-logo"  class="mian-logo-img"/>
         </div>
@@ -31,6 +30,7 @@
               <router-view/>
             </keep-alive>
             <ABackTop :height="100" :bottom="80" :right="50" container=".content-wrapper"></ABackTop>
+            <Footer class="footer">Copyright &copy; 2019 SaberInoryKiss </Footer>
           </Content>
         </Layout>
       </Content>
@@ -188,8 +188,14 @@ export default {
   }
 }
 </script>
-<style>
-  .mian-logo-img{
-    margin-left: 10px !important;
-  }
+<style scoped>
+.footer {
+    padding: 0;
+    margin-top: 15px;   
+    height: 35px;
+    text-align: center;
+    line-height: 20px;
+    background: #F6F7F9;
+    color: rgba(0, 0, 0, .3);  
+}
 </style>

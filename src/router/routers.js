@@ -33,17 +33,18 @@ export default [
     redirect: '/home',
     component: Main,
     meta: {
-      hideInMenu: true,
-      notCache: true
+      // hideInMenu: true,
+      // notCache: true
+      title: '工作台'
     },
     children: [
       {
         path: '/home',
         name: 'home',
         meta: {
-          hideInMenu: true,
+          // hideInMenu: true,
           title: '工作台',
-          notCache: true,
+          // notCache: true,
           icon: 'md-home'
         },
         component: () => import('@/view/single-page/home')
@@ -72,7 +73,7 @@ export default [
     ]
   },
   
-  // 导航管理
+  // 用户管理
   {
     path: '/user_manage',
     name: 'user_manage',
@@ -93,7 +94,7 @@ export default [
       }
     ]
   },
-  // 内容管理
+
   {
     path: '/g6_topo',
     name: 'g6_topo',
@@ -113,13 +114,13 @@ export default [
         component: () => import('@/view/g6/tutorial.vue')
       },
       {
-        path: '/content_g6_topo2',
-        name: 'content_g6_topo2',
+        path: '/content_g6_line',
+        name: 'content_g6_line',
         meta: {
           icon: 'ios-document',
-          title: '测试二'
+          title: '节点连线'
         },
-        component: () => import('@/view/g6/test2.vue')
+        component: () => import('@/view/g6/g6_line.vue')
       },
       {
         path: '/content_g6_forceLayout',
@@ -152,31 +153,31 @@ export default [
     component: Main,
     children: [
       {
-        path: '/echart_topo_test1',
-        name: 'echart_topo_test1',
+        path: '/echart_network_topo',
+        name: 'echart_network_topo',
         meta: {
           icon: 'md-person',
-          title: '测试一'
+          title: '网络拓扑图'
         },
-        component: () => import('@/view/Echart/test1.vue')
+        component: () => import('@/view/Echart/networkTopo.vue')
       },
       {
-        path: '/echart_topo_test2',
-        name: 'echart_topo_test2',
+        path: '/echart_force_topo',
+        name: 'echart_force_topo',
         meta: {
           icon: 'md-person',
-          title: '测试二'
+          title: 'Echart力导向图'
         },
-        component: () => import('@/view/Echart/test2.vue')
+        component: () => import('@/view/Echart/forceTopo.vue')
       },
       {
-        path: '/echart_topo_test3',
-        name: 'echart_topo_test3',
+        path: '/echart_animate_topo',
+        name: 'echart_animate_topo',
         meta: {
           icon: 'md-person',
-          title: '测试三'
+          title: 'Echart动画拓扑图'
         },
-        component: () => import('@/view/Echart/test3.vue')
+        component: () => import('@/view/Echart/animateTopo.vue')
       },
       {
         path: '/echart_topo_dragging',

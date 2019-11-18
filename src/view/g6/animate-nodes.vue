@@ -202,6 +202,7 @@ export default {
             G6.registerEdge(
                 "circle-running", {
                     afterDraw(cfg, group) {
+                        // console.log(cfg)
                         const shape = group.get("children")[0];
                         const startPoint = shape.getPoint(0);
                         // 添加红色圆点
