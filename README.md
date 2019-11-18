@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-18 11:11:48
+ * @LastEditTime: 2019-11-18 11:15:19
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -65,4 +65,4 @@ npm run build
 - [Echart官方文档](https://www.echartsjs.com/zh/index.html) 
 
 ## License
-[Echart官方文档](https://github.com/antvis/g6/blob/master/LICENSE) 
+[MIT License](https://github.com/antvis/g6/blob/master/LICENSE) 
