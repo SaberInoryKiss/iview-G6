@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-package-lock.json
+
 
 /tests/e2e/videos/
 /tests/e2e/screenshots/
