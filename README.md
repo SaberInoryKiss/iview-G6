@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-18 11:06:16
+ * @LastEditTime: 2019-11-18 11:08:44
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -19,6 +19,7 @@
 - 用户管理：是我学习做前后端联调的记录，基本就是写增删改查
 
 ## 示例
+![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/1.png)
 ![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/1.png)
 ![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/2.png)
 ![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/3.png)
