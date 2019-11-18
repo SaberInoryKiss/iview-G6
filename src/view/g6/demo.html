@@ -1,0 +1,123 @@
+<!--
+ * @Author: 夏开尧
+ * @Description: file content
+ * @Date: 2019-11-12 15:55:28
+ * @LastEditTime: 2019-11-12 16:58:13
+ * @LastEditors: 夏开尧
+ * @UpdateLogs: logs
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial Demo</title>
+</head>
+
+<body>
+    <div id="mountNode"></div>
+
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.1.0/build/g6.js"></script>
+
+    <script>
+        const MIN_ARROW_SIZE = 3;
+        G6.registerEdge('customEdge', {
+            // 起始（圆形）箭头
+            startArrow: {
+                path() {
+                    const r = 5;
+                    const x = -5;
+                    const y = 0;
+                    return [
+                        ['M', x, y - r],
+                        ['a', r, r, 0, 1, 1, 0, 2 * r],
+                        ['a', r, r, 0, 1, 1, 0, -2 * r],
+                        ['z']
+                    ];
+                },
+                shorten() {
+                    return 10;
+                },
+                style(item) {
+                    const keyShape = item.getKeyShape();
+                    const { strokeOpacity, stroke } = keyShape.attr();
+                    return {
+                        fillOpacity: strokeOpacity,
+                        stroke
+                    };
+                }
+            },
+            // 终止箭头
+            endArrow: {
+                path(item) {
+                    const keyShape = item.getKeyShape();
+                    let lineWidth = keyShape.attr('lineWidth');
+                    lineWidth = lineWidth > MIN_ARROW_SIZE ? lineWidth : MIN_ARROW_SIZE;
+                    const width = lineWidth * 10 / 3;
+                    const halfHeight = lineWidth * 4 / 3;
+                    const radius = lineWidth * 4;
+                    return [
+                        ['M', -width, halfHeight],
+                        ['L', 0, 0],
+                        ['L', -width, -halfHeight],
+                        ['A', radius, radius, 0, 0, 1, -width, halfHeight],
+                        ['Z']
+                    ];
+                },
+                shorten(item) {
+                    const keyShape = item.getKeyShape();
+                    const lineWidth = keyShape.attr('lineWidth');
+                    return (lineWidth > MIN_ARROW_SIZE ? lineWidth : MIN_ARROW_SIZE) * 3.1;
+                },
+                style(item) {
+                    const keyShape = item.getKeyShape();
+                    const { strokeOpacity, stroke } = keyShape.attr();
+                    return {
+                        fillOpacity: strokeOpacity,
+                        fill: stroke
+                    };
+                }
+            }
+        });
+        // 定义数据源
+        const data = {
+            // 点集
+            nodes: [{
+                id: 'node1',
+                x: 100,
+                y: 200
+            }, {
+                id: 'node2',
+                x: 300,
+                y: 200
+            }],
+            // 边集
+            edges: [
+                // 表示一条从 node1 节点连接到 node2 节点的边
+                {
+                    source: 'node1',
+                    target: 'node2'
+                }
+            ]
+        };
+
+        // 创建 G6 图实例
+        const graph = new G6.Graph({
+            container: 'mountNode', // 指定图画布的容器 id，与第 9 行的容器对应
+            // 画布宽高
+            width: 800,
+            height: 500
+        });
+        graph.edge({
+            shape: 'customEdge',
+            endArrow: true,
+            startArrow: true
+        });
+        // 读取数据
+        graph.data(data);
+        // 渲染图
+        graph.render();
+    </script>
+</body>
+
+</html>
