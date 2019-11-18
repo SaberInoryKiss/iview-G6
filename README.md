@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-18 10:41:28
+ * @LastEditTime: 2019-11-18 11:03:41
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -19,10 +19,10 @@
 - 用户管理：是我学习做前后端联调的记录，基本就是写增删改查
 
 ## 示例
-![image](F8277382B9824B958B249970CDBFA52E)
-![image](B2181E54D84A417EABDF7FEF51F7360C)
-![image](805F7F970AF64161B9AB5310A0CA45C0)
-![image](9E78373152E74C25A0207AC94B04F65D)
+![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/1.png)
+![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/2.png)
+![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/3.png)
+![image](https://github.com/SaberInoryKiss/iview-G6/blob/master/src/assets/screenShots/4.png)
 
 
 ## 说明模拟数据mock
