@@ -9,6 +9,7 @@ export default {
   content_g6_line: '节点连线',
   content_g6_forceLayout: '经典力导向布局',
   content_g6_animateNodes: '节点动画',
+  content_g6_hoverEvents: '鼠标hover事件',
   echart_topo: 'Echart拓扑图',
   echart_network_topo: '网络拓扑图',
   echart_force_topo: 'Echart力导向图',

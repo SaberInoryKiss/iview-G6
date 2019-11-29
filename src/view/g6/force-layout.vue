@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-12 10:41:01
- * @LastEditTime: 2019-11-16 13:50:54
+ * @LastEditTime: 2019-11-28 17:39:34
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -77,7 +77,7 @@
                     },
                     modes: {
                         default: [ 
-                            'drag-canvas', 'zoom-canvas', 'drag-node', // 允许拖拽画布、放缩画布、拖拽节点
+                            'drag-canvas', 'zoom-canvas', 'drag-node', 'activate-relations',// 允许拖拽画布、放缩画布、拖拽节点
                             //tooltip 节点提示框
                             {
                                 type: 'tooltip', // 提示框

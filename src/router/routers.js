@@ -139,6 +139,15 @@ export default [
           title: '节点动画'
         },
         component: () => import('@/view/g6/animate-nodes.vue')
+      },
+      {
+        path: '/content_g6_hoverEvents',
+        name: 'content_g6_hoverEvents',
+        meta: {
+          icon: 'ios-cloud-download',
+          title: '鼠标hover事件'
+        },
+        component: () => import('@/view/g6/hover-events.vue')
       }
     ]
   },

@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-18 15:11:00
+ * @LastEditTime: 2019-11-21 15:23:07
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  */
@@ -16,7 +16,8 @@ export default {
   content_g6_tutorial: 'tutorial',
   content_g6_line: 'content g6 line',
   content_g6_forceLayout: 'content g6 forceLayout',
-  content_g6_animateNodes: 'content_g6_animateNodes',
+  content_g6_animateNodes: 'content g6 animateNodes',
+  content_g6_hoverEvents: 'content g6 hoverEvents',
   echart_topo: 'echart topo',
   echart_network_topo: 'echart network topo',
   echart_force_topo: 'echart force topo',
