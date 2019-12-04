@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-11 16:28:41
+ * @LastEditTime: 2019-12-02 19:51:41
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  */
@@ -58,7 +58,8 @@ module.exports = {
   devServer: {
     proxy: {
         '/api': {
-          target: 'http://172.20.83.50:8181',
+          // target: 'http://172.20.83.50:8181',
+          target: 'http://172.20.71.100:8181',
           changeOrigin: true,
           pathRewrite: {
               '^/api': '/'

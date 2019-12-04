@@ -197,6 +197,45 @@ export default [
         },
         component: () => import('@/view/Echart/dragging.vue')
       },
+      {
+        path: '/echart_portMonitor',
+        name: 'echart_portMonitor',
+        meta: {
+          icon: 'md-person-add',
+          title: '端口监控'
+        },
+        component: () => import('@/view/Echart/portMonitor.vue')
+      },
+    ]
+  },
+  //DEMO
+  {
+    path: '/iview_demo',
+    name: 'iview_demo',
+    meta: {
+      icon: 'ios-people',
+      title: 'iview-例子'
+    },
+    component: Main,
+    children: [
+      {
+        path: '/iview_tabs',
+        name: 'iview_tabs',
+        meta: {
+          icon: 'md-person',
+          title: 'iview标签页'
+        },
+        component: () => import('@/view/demo/tabs/tabs.vue')
+      },
+      {
+        path: '/iview_dropdown',
+        name: 'iview_dropdown',
+        meta: {
+          icon: 'md-person',
+          title: 'iview下拉菜单'
+        },
+        component: () => import('@/view/demo/dropdown/index.vue')
+      },
     ]
   },
 
