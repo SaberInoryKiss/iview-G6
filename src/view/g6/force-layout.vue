@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-12 10:41:01
- * @LastEditTime: 2019-11-28 17:39:34
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2019-12-20 14:48:31
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
 <style>
@@ -71,6 +71,7 @@
                         },
                     },
                     defaultEdge: {
+                        stroke:'blue',
                         labelCfg: {
                             autoRotate: true
                         }

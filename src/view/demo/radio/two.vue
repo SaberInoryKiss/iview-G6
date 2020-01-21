@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-06 09:56:58
- * @LastEditTime: 2019-12-10 14:16:39
+ * @LastEditTime: 2019-12-10 14:23:09
  * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
@@ -33,11 +33,13 @@ require('echarts/theme/dark'); //引用主题文件
           
         }
     },
-    created(){
+    mounted() {
+        this.charts()
     },
     methods: {
         charts() {
-            let myechart = this.$echarts.init(this.$refs.myechart,'dark') //初始化一个echarts
+            var colors = ['#5793f3', '#d14a61', '#675bba'];
+            let myechart = this.$echarts.init(this.$refs.myechart) //初始化一个echarts
             myechart.setOption(
                         {
                             color: colors,

@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-06 09:56:58
- * @LastEditTime: 2019-12-03 19:13:15
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2019-12-27 17:17:57
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
 <template>
@@ -12,14 +12,18 @@
   this.$refs.myechart 也可以替换为 document.getElementById('main') 或者 document.getElementByClassName('echart-box')
   -->
   <div class="echart">
-      <div><input id="selectall" type="button" class="btn btn-primary" value="全选" /></div>
-      
       <div class="HelloWorld echart-box" ref="myechart" id="main"></div>
   </div>
 </template>
 
 <script>
 import echarts from 'echarts'  //引入Echarts，
+require('echarts/theme/macarons'); //引用主题文件
+require('echarts/theme/infographic'); //引用主题文件
+require('echarts/theme/roma'); //引用主题文件
+require('echarts/theme/shine'); //引用主题文件
+require('echarts/theme/vintage'); //引用主题文件
+require('echarts/theme/dark'); //引用主题文件
   export default {
     name:'Ecahrt',
     data(){
@@ -35,7 +39,6 @@ import echarts from 'echarts'  //引入Echarts，
             inUnknownProtos: [],
             outMulticastPkts:[],
             outNUcastPkts:[],
-          
         }
     },
     created(){
@@ -43,7 +46,8 @@ import echarts from 'echarts'  //引入Echarts，
     },
     methods: {
         charts() {
-            let myechart = this.$echarts.init(this.$refs.myechart) //初始化一个echarts
+            console.log(this.$echarts)
+            let myechart = this.$echarts.init(this.$refs.myechart,'shine') //初始化一个echarts
             myechart.setOption(
                         {
                         tooltip : {
@@ -182,7 +186,7 @@ import echarts from 'echarts'  //引入Echarts，
         getData() {
             this.$axios({
                 method: "GET",
-                url: "api/api/underlay/v1/port/scanPort/172.20.1.151",
+                url: "api/api/underlay/v1/port/scanPort/172.20.1.152",
                 headers: {
                     // 'Content-Type': 'application/x-www-form-urlencoded'
                     'Authorization': 'Basic YWRtaW46YWRtaW4='

@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-15 11:45:31
- * @LastEditTime: 2019-11-28 16:54:10
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2019-12-27 11:32:31
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
 <style>
@@ -48,16 +48,16 @@ export default {
             const data = {
                 nodes: [{
                     id: 'node1',
-                    x: 500,
-                    y: 400,
+                    x: 600.7150624852015,
+                    y: 400.7150624852015,
                     label: 'node1',
                     shape: 'image',
                     img: img,
                     class: '交换机'
                 }, {
                     id: 'node2',
-                    x: 900,
-                    y: 400,
+                    x: 900.7150624852015,
+                    y: 400.7150624852015,
                     label: 'node2',
                     shape: 'image',
                     img: img,
@@ -74,7 +74,8 @@ export default {
                     target: 'node2',
                     label: 'hover 前的边文本',
                     style: {
-                        lineWidth: 8
+                        lineWidth: 3,
+                        lineAppendWidth: 24
                     },
                     labelCfg: {
                         refY: 10,
@@ -92,8 +93,10 @@ export default {
                 },
                 defaultEdge: {
                     shape: 'quadratic',
-                    color: '#bae7ff',
-                    lineAppendWidth: 3
+                    style: {
+                        stroke: '#b5b5b5',
+                        
+                    }
                 },
                 nodeStateStyles: {
                     hover: {
@@ -139,6 +142,32 @@ export default {
 
             // 监听鼠标进入节点
             graph.on('node:mouseenter', e => {
+                const tooltip = document.getElementsByClassName('g6-tooltip') || [];
+                const bbox = tooltip[0] && tooltip[0].getBoundingClientRect();
+                console.log(bbox.top)
+                const {centerX, centerY, minX, minY, height} = e.item.getBBox();
+                // console.log(tooltip[0])
+                // console.log(e.item.getBBox())
+                // console.log(graph.getClientByPoint(centerX,minY))
+                const { x , y } = graph.getClientByPoint(centerX+20 ,minY+80);
+                // console.log({ x , y })
+                let OFFSET = 12;
+                // console.log(x)
+                G6.Util.modifyCSS(tooltip[0], {
+                    position: 'fixed',
+                    zIndex: '10000',
+                    visibility: 'visible',
+                    left: bbox.left + 'px',
+                    top: bbox.top + 'px'
+                    // left: '700px',
+                    // top:'500px'
+                })
+                const nodeItem = e.item;
+                // 设置目标节点的 hover 状态 为 true
+                graph.setItemState(nodeItem, 'hover', true);
+            });
+            // 监听鼠标离开节点
+            graph.on('node:mouseleave', e => {
                 // const tooltip = document.getElementsByClassName('g6-tooltip') || [];
                 // const bbox = tooltip[0] && tooltip[0].getBoundingClientRect();
                 // const {centerX, centerY, minX, minY, height} = e.item.getBBox();
@@ -151,19 +180,12 @@ export default {
                 // G6.Util.modifyCSS(tooltip[0], {
                 //     position: 'fixed',
                 //     zIndex: '10000',
-                //     visibility: 'visible',
+                //     visibility: 'hidden',
                 //     left: x + 'px',
                 //     top: y + 'px'
                 //     // left: '700px',
                 //     // top:'500px'
                 // })
-                const nodeItem = e.item;
-                // 设置目标节点的 hover 状态 为 true
-                graph.setItemState(nodeItem, 'hover', true);
-            });
-            // 监听鼠标离开节点
-            graph.on('node:mouseleave', e => {
-                
                 const nodeItem = e.item;
                 // 设置目标节点的 hover 状态 false
                 graph.setItemState(nodeItem, 'hover', false);

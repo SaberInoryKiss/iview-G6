@@ -148,6 +148,15 @@ export default [
           title: '鼠标hover事件'
         },
         component: () => import('@/view/g6/hover-events.vue')
+      },
+      {
+        path: '/content_g6_arcEdge',
+        name: 'content_g6_arcEdge',
+        meta: {
+          icon: 'ios-cloud-download',
+          title: '鼠标hover事件'
+        },
+        component: () => import('@/view/g6/arcEdge.vue')
       }
     ]
   },
@@ -206,6 +215,15 @@ export default [
         },
         component: () => import('@/view/Echart/portMonitor.vue')
       },
+      {
+        path: '/echart_3DBar',
+        name: 'echart_3DBar',
+        meta: {
+          icon: 'md-person-add',
+          title: '3D柱状图'
+        },
+        component: () => import('@/view/Echart/3DBar.vue')
+      },
     ]
   },
   //DEMO
@@ -226,6 +244,15 @@ export default [
           title: 'iview标签页'
         },
         component: () => import('@/view/demo/tabs/tabs.vue')
+      },
+      {
+        path: '/iview_radio',
+        name: 'iview_radio',
+        meta: {
+          icon: 'md-person',
+          title: 'iview单选框'
+        },
+        component: () => import('@/view/demo/radio/index.vue')
       },
       {
         path: '/iview_dropdown',

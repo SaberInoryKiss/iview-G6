@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-11-15 11:45:31
- * @LastEditTime: 2019-12-02 11:38:08
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2019-12-23 19:48:24
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
 <style>
@@ -53,10 +53,10 @@ export default {
                 defaultEdge: {
                     shape: "quadratic",
                     size: 2,
-                    lineAppendWidth: 5,//提升边的击中范围
+                    // lineAppendWidth: 5,//提升边的击中范围
                     style: {
                         stroke: "#cce6f0",
-                        
+                        lineAppendWidth: 24
                     },
                 },
 
@@ -73,11 +73,11 @@ export default {
                             type: "drag-node",
                             enableDelegate: true //是否用方框代替元素移动
                         },
-                        {
-                            type: "click-select",
-                            multiple: true,
-                            trigger: "ctrl" //按住ctrl可以实现多选进行移动,会和下面的高亮节点产生冲突，导致多选失效
-                        },
+                        // {
+                        //     type: "click-select",
+                        //     multiple: true,
+                        //     trigger: "ctrl" //按住ctrl可以实现多选进行移动,会和下面的高亮节点产生冲突，导致多选失效
+                        // },
                         {
                             type: "activate-relations", //高亮节点
                             resetSelected: false //交互后会重置节点的选择状态。能解决和其他交互冲突的bug
@@ -87,16 +87,16 @@ export default {
                         //     trigger: 'drag',//会和上面的"drag-canvas"拖拽产生冲突
                         // },
                         //提示框，目前有些问题
-                        // {
-                        //     type: 'tooltip',
-                        //     refX: '40',
-                        //     formatText(model) {
-                        //     // 提示框文本内容
-                        //     const text =
-                        //             '节点: ' + model.label + '<br/> 类型: ' + model.class;
-                        //     return text;
-                        //     }
-                        // },
+                        {
+                            type: 'tooltip',
+                            refX: '40',
+                            formatText(model) {
+                            // 提示框文本内容
+                            const text =
+                                    '节点: ' + model.label + '<br/> 类型: ' + model.class;
+                            return text;
+                            }
+                        },
                         {
                             type: 'edge-tooltip',       // 边提示框
                             formatText(model) {         // 边提示框文本内容
@@ -217,7 +217,8 @@ export default {
                         sourceAnchor: 0, //表示从第一个锚点开始
                         targetAnchor: 0, //表示从最后一个锚点结束
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
 
@@ -227,7 +228,8 @@ export default {
                         sourceAnchor: 1,
                         targetAnchor: 1,
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
@@ -236,7 +238,8 @@ export default {
                         sourceAnchor: 2,
                         targetAnchor: 2,
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
@@ -245,35 +248,42 @@ export default {
                         sourceAnchor: 3,
                         targetAnchor: 3,
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
                         source: "node2",
                         target: "node3",
+                        // lineAppendWidth: 5,
                         style: {
-                            endArrow: true
+                            
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
                         source: "node3",
                         target: "node4",
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
                         source: "node4",
                         target: "node3",
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
                         source: "node3",
                         target: "node5",
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                         }
                     },
                     {
@@ -281,7 +291,8 @@ export default {
                         target: "node6",
                         // shape: 'cubic',
                         style: {
-                            endArrow: true
+                            endArrow: true,
+                            lineAppendWidth: 24
                             // lineWidth: 5,
                             // stroke: '#83d5e2',
                         }
@@ -291,6 +302,8 @@ export default {
 
             graph.data(data);
             graph.render();
+
+            
 
             graph.getNodes().forEach(node => {
                 console.log(node);

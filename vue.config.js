@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-12-02 19:51:41
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2019-12-27 17:13:25
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  */
 const path = require('path')
@@ -59,7 +59,7 @@ module.exports = {
     proxy: {
         '/api': {
           // target: 'http://172.20.83.50:8181',
-          target: 'http://172.20.71.100:8181',
+          target: 'http://172.20.71.6:8181',
           changeOrigin: true,
           pathRewrite: {
               '^/api': '/'
