@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-12-18 17:05:35
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2020-01-21 14:33:02
+ * @LastEditors  : Please set LastEditors
  * @UpdateLogs: logs
  */
 export default {
@@ -26,6 +26,8 @@ export default {
   echart_topo_dragging: 'echart topo dragging',
   echart_portMonitor: 'echart portMonitor',
   echart_3DBar: 'echart 3DBar',
+  echart_3DGlobe1: 'echart 3DGlobe1',
+  echart_3DGlobe2: 'echart 3DGlobe2',
   iview_demo: 'iview demo',
   iview_tabs: 'iview tabs',
   iview_dropdown: 'iview dropdown',

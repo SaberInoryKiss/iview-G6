@@ -223,6 +223,23 @@ export default [
           title: '3D柱状图'
         },
         component: () => import('@/view/Echart/3DBar.vue')
+      },{
+        path: '/echart_3DGlobe1',
+        name: 'echart_3DGlobe1',
+        meta: {
+          icon: 'md-person-add',
+          title: '3D地球'
+        },
+        component: () => import('@/view/Echart/3DGlobe1.vue')
+      },
+      {
+        path: '/echart_3DGlobe2',
+        name: 'echart_3DGlobe2',
+        meta: {
+          icon: 'md-person-add',
+          title: '3D地球'
+        },
+        component: () => import('@/view/Echart/3DGlobe2.vue')
       },
     ]
   },

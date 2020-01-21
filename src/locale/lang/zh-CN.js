@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-12-18 17:00:08
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2020-01-21 14:32:54
+ * @LastEditors  : Please set LastEditors
  * @UpdateLogs: logs
  */
 export default {
@@ -26,6 +26,8 @@ export default {
   echart_topo_dragging: 'echart拖拽实例',
   echart_portMonitor: '端口监控',
   echart_3DBar:'3D柱状图',
+  echart_3DGlobe1:'3D地球1',
+  echart_3DGlobe2:'3D地球2',
   iview_demo: 'iview例子',
   iview_tabs: 'iview标签页切换',
   iview_dropdown: 'iview下拉菜单',
