@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@antv/g6": "^3.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.22.0",
     "clipboard": "^2.0.0",
     "codemirror": "^5.38.0",
