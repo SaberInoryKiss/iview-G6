@@ -2,8 +2,8 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-08-26 19:29:46
- * @LastEditTime: 2019-11-11 16:44:44
- * @LastEditors: 夏开尧
+ * @LastEditTime: 2020-07-29 15:09:43
+ * @LastEditors: Please set LastEditors
  * @UpdateLogs: logs
  -->
 <template>
@@ -67,7 +67,6 @@
                 <FormItem 
                     :label="item.label"
                     v-for="item of modalItem" 
-                    v-if="!item.hide"
                     :key="item.label">
                     <Input 
                         :type="item.type || 'text'" 

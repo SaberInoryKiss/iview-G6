@@ -31,6 +31,7 @@ export default {
   iview_demo: 'iview demo',
   iview_tabs: 'iview tabs',
   iview_dropdown: 'iview dropdown',
+  iview_table: 'iview table',
   iview_radio: 'iview radio',
   i18n_page: 'Internationalization',
   'i18n-tip': 'Note: Only this page is multi-language, other pages do not add language content to the multi-language package.',

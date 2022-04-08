@@ -280,6 +280,15 @@ export default [
         },
         component: () => import('@/view/demo/dropdown/index.vue')
       },
+      {
+        path: '/iview_table',
+        name: 'iview_table',
+        meta: {
+          icon: 'md-person',
+          title: 'iview 表格'
+        },
+        component: () => import('@/view/demo/table/table.vue')
+      },
     ]
   },
 

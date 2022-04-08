@@ -31,6 +31,7 @@ export default {
   iview_demo: 'iview例子',
   iview_tabs: 'iview标签页切换',
   iview_dropdown: 'iview下拉菜单',
+  iview_table: 'iview 表格',
   iview_radio: 'iview单选框',
   i18n_page: '多语言',
   'i18n-tip': '注：仅此页做了多语言，其他页面没有在多语言包中添加语言内容',

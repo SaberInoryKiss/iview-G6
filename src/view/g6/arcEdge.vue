@@ -71,7 +71,7 @@ export default {
                     shape: 'arc-edge',
                     edgeOffset: -50,
                     style: {
-                        lineWidth: 10
+                        lineWidth: 1
                     }
                 },
                 {
@@ -80,7 +80,7 @@ export default {
                     shape: 'arc-edge',
                     edgeOffset: 50,
                     style: {
-                        lineWidth: 10
+                        lineWidth: 1
                     }
                 },
                 {
@@ -89,7 +89,7 @@ export default {
                     shape: 'arc-edge',
                     edgeOffset: 30,
                     style: {
-                        lineWidth: 10
+                        lineWidth: 1
                     }
                 },
                 {
@@ -98,7 +98,7 @@ export default {
                     shape: 'arc-edge',
                     edgeOffset: 10,
                     style: {
-                        lineWidth: 10
+                        lineWidth: 1
                     }
                 },
                 {
@@ -107,7 +107,7 @@ export default {
                     shape: 'arc-edge',
                     edgeOffset: 100,
                     style: {
-                        lineWidth: 5
+                        lineWidth: 1
                     }
                 },
                 {
@@ -159,15 +159,15 @@ export default {
 
             const edges = data.edges
             let count = 0;
-                edges.forEach(e => {
+            edges.forEach(e => {
                 if (e.source === 'node5' && e.target === 'node7') count++;
             });
-                const edgeOffsetsFor57 = getOffsets(count, [-100, 100]);
-                let osIndex = 0;
-                edges.forEach(e => {
+            const edgeOffsetsFor57 = getOffsets(count, [-100, 100]);
+            let osIndex = 0;
+            edges.forEach(e => {
                 if (e.source === 'node5' && e.target === 'node7') {
-                e.edgeOffset = edgeOffsetsFor57[osIndex];
-                osIndex++;
+                    e.edgeOffset = edgeOffsetsFor57[osIndex];
+                    osIndex++;
                 }
             });
 
@@ -183,22 +183,22 @@ export default {
                     const edgeOffset = cfg.edgeOffset;
                     const edgeOffsetSign = edgeOffset > 0 ? 1 : -1;
                     const midPoint = {
-                    'x': (startPoint.x + endPoint.x) / 2, 
-                    'y': (startPoint.y + endPoint.y) / 2
+                        'x': (startPoint.x + endPoint.x) / 2, 
+                        'y': (startPoint.y + endPoint.y) / 2
                     };
                     const vec = {
-                    'x': endPoint.x - startPoint.x,
-                    'y': endPoint.y - startPoint.y
+                        'x': endPoint.x - startPoint.x,
+                        'y': endPoint.y - startPoint.y
                     };
                     const edgeAngle = Math.atan2(vec.y, vec.x);
                     const arcPoint = {
-                    'x': edgeOffset * Math.cos((-Math.PI / 2 + edgeAngle)) + midPoint.x,
-                    'y': edgeOffset * Math.sin((-Math.PI / 2 + edgeAngle)) + midPoint.y
+                        'x': edgeOffset * Math.cos((-Math.PI / 2 + edgeAngle)) + midPoint.x,
+                        'y': edgeOffset * Math.sin((-Math.PI / 2 + edgeAngle)) + midPoint.y
                     }
                     const center = getCircleCenterByPoints(startPoint, arcPoint, endPoint);
                     const radius = length(startPoint, center);
 
-                    const perimeter = 2 * Math.PI * radius;
+                    const perimeter = 2.2 * Math.PI * radius;
                     const offsetArc = 10;
                     const startOffsetAngle = Math.PI * 2 * (cfg.sourceNode.getModel().size / 2 + offsetArc) / perimeter;
                     const endArrowOffsetAngle = Math.PI * 2 * (cfg.targetNode.getModel().size / 2 + offsetArc) / perimeter;
@@ -213,12 +213,12 @@ export default {
                     //   'y': radius * Math.sin(newStartAngle) + center.y
                     // }
                     const endArrowPoint = {
-                    'x': radius * Math.cos(newEndArrowAngle) + center.x,
-                    'y': radius * Math.sin(newEndArrowAngle) + center.y
+                        'x': radius * Math.cos(newEndArrowAngle) + center.x,
+                        'y': radius * Math.sin(newEndArrowAngle) + center.y
                     }
                     endPoint = {
-                    'x': radius * Math.cos(newEndAngle) + center.x,
-                    'y': radius * Math.sin(newEndAngle) + center.y
+                        'x': radius * Math.cos(newEndAngle) + center.x,
+                        'y': radius * Math.sin(newEndAngle) + center.y
                     }
                     let flag = 1;
                     if (edgeOffset < 0) flag = 0;
@@ -228,9 +228,9 @@ export default {
                         stroke: '#aaa',
                         lineWidth,
                         path: [
-                        [ 'M', startPoint.x, startPoint.y ],
-                        [ 'A', radius, radius, 0, 0, flag, 
-                        endPoint.x, endPoint.y]
+                            [ 'M', startPoint.x, startPoint.y ],
+                            [ 'A', radius, radius, 0, 0, flag, 
+                            endPoint.x, endPoint.y]
                         ]
                     }
                     });
@@ -283,7 +283,7 @@ export default {
             graph.data(data);
             graph.render();
 
-              function getCircleCenterByPoints(p1, p2, p3) {
+            function getCircleCenterByPoints(p1, p2, p3) {
                 const a = p1.x - p2.x;
                 const b = p1.y - p2.y;
                 const c = p1.x - p3.x;

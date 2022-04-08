@@ -228,25 +228,14 @@
                     value: (Math.random() * 3000).toFixed(2)
                 }
             }
-
-
-
-
-    }
-
-
-
+        }
     }
 
 </script>
-
 
 <style>
     .earthmap{
         width: 100%;
         height: 700px;
-        /* background: rgba(16, 167, 202, 0.39); */
     }
-
-
 </style>

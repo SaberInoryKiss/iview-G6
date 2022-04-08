@@ -2,13 +2,13 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-08-27 15:22:35
- * @LastEditTime: 2019-11-18 15:11:45
+ * @LastEditTime: 2022-01-19 11:21:14
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
 <template>
     <div class="sign">
-        <!-- <vue-particles
+        <vue-particles
             color="#7FB6F5"
             :particleOpacity="0.6"
             :particlesNumber="200"
@@ -26,7 +26,7 @@
             clickMode="push"
             style="width: 100%;height: 100vh;"
         >
-      </vue-particles> -->
+      </vue-particles>
         <div class="sign_bg">
             <!-- <img src="~@/assets/logo.png" class="sign_logo"> -->
                 <div class="login_box">
@@ -103,60 +103,61 @@ export default {
             } 
         },
         login (){
-            this.checkLogin(this.username,this.password)
-            // console.log(this.checkLogin(this.username,this.password))
+            this.$router.push('/home')
+            // this.checkLogin(this.username,this.password)
+            // // console.log(this.checkLogin(this.username,this.password))
             
-            .then(() => {
-                // const data = {
-                //     username: this.username,
-                //     password: this.password 
-                // }
-                // const username = this.username,
-                // const password = this.password
-                const username = this.username
-                const password = this.password
-                //请求接口，根据不同返回状态给出相应的提示
-                // this.$axios.post('/api/netflow/v1/xky/login/admin/zhang',data)
-                // console.log('/api/netflow/v1/xky/login/'+username+'/'+password)
-                this.$axios.post('api/api/netflow/v1/xky/login/'+username+'/'+password)
+            // .then(() => {
+            //     // const data = {
+            //     //     username: this.username,
+            //     //     password: this.password 
+            //     // }
+            //     // const username = this.username,
+            //     // const password = this.password
+            //     const username = this.username
+            //     const password = this.password
+            //     //请求接口，根据不同返回状态给出相应的提示
+            //     // this.$axios.post('/api/netflow/v1/xky/login/admin/zhang',data)
+            //     // console.log('/api/netflow/v1/xky/login/'+username+'/'+password)
+            //     this.$axios.post('api/api/netflow/v1/xky/login/'+username+'/'+password)
 
-                // console.log(data)
-                    .then( res => {
-                        console.log(res)
-                        const code = res.data.code
-                        // console.log(code)
-                        if(code == '0000'){
-                            this.$Notice.success({
-                                title: '登陆提示',
-                                desc: '登录成功！'
-                            })
-                            this.$router.push('/home')
-                        }
-                        else {
-                            this.$Notice.error({
-                                title: '登录失败',
-                                desc: res.data.errMsg
-                            })
-                        }
-                    })
-                    .catch( error => {
-                        console.log(error.response)
-                        console.log(error.message)
-                        this.$Notice.error({
-                            title: '登陆提示',
-                            desc: '登陆失败！'
-                        })
-                    })
-            })
-            .catch(err => {
-                const msg = err =='noUserName'?'用户名为空！':'密码为空！'
-                if(!this.password){
-                    this.$Notice.error({
-                        title: '登陆提示',
-                        desc: msg
-                    })
-                }
-            })
+            //     // console.log(data)
+            //         .then( res => {
+            //             console.log(res)
+            //             const code = res.data.code
+            //             // console.log(code)
+            //             if(code == '0000'){
+            //                 this.$Notice.success({
+            //                     title: '登陆提示',
+            //                     desc: '登录成功！'
+            //                 })
+            //                 this.$router.push('/home')
+            //             }
+            //             else {
+            //                 this.$Notice.error({
+            //                     title: '登录失败',
+            //                     desc: res.data.errMsg
+            //                 })
+            //             }
+            //         })
+            //         .catch( error => {
+            //             console.log(error.response)
+            //             console.log(error.message)
+            //             this.$Notice.error({
+            //                 title: '登陆提示',
+            //                 desc: '登陆失败！'
+            //             })
+            //         })
+            // })
+            // .catch(err => {
+            //     const msg = err =='noUserName'?'用户名为空！':'密码为空！'
+            //     if(!this.password){
+            //         this.$Notice.error({
+            //             title: '登陆提示',
+            //             desc: msg
+            //         })
+            //     }
+            // })
         }
     }
 }

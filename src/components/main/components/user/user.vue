@@ -2,7 +2,7 @@
  * @Author: 夏开尧
  * @Description: file content
  * @Date: 2019-03-03 20:07:32
- * @LastEditTime: 2019-11-12 10:05:45
+ * @LastEditTime: 2022-01-19 11:22:47
  * @LastEditors: 夏开尧
  * @UpdateLogs: logs
  -->
@@ -97,31 +97,32 @@ export default {
 			this.isAdminModal = false;
 		},
 		logOut() {
-			this.$axios
-				.get("api/api/netflow/v1/xky/logout")
-				.then(res => {
-					// console.log(res)
-					const code = res.data.code;
-					// console.log(code)
-					if (code == "0000") {
-						this.$Notice.success({
-							desc: "登出成功！"
-						});
-						this.$router.push("/");
-					} else {
-						this.$Notice.error({
-							title: "登出失败",
-							desc: res.data.errMsg
-						});
-					}
-				})
-				.catch(error => {
-					console.log(error.response);
-					console.log(error.message);
-					this.$Notice.error({
-						desc: "登出失败！"
-					});
-				});
+			this.$router.push("/");
+			// this.$axios
+			// 	.get("api/api/netflow/v1/xky/logout")
+			// 	.then(res => {
+			// 		// console.log(res)
+			// 		const code = res.data.code;
+			// 		// console.log(code)
+			// 		if (code == "0000") {
+			// 			this.$Notice.success({
+			// 				desc: "登出成功！"
+			// 			});
+			// 			this.$router.push("/");
+			// 		} else {
+			// 			this.$Notice.error({
+			// 				title: "登出失败",
+			// 				desc: res.data.errMsg
+			// 			});
+			// 		}
+			// 	})
+			// 	.catch(error => {
+			// 		console.log(error.response);
+			// 		console.log(error.message);
+			// 		this.$Notice.error({
+			// 			desc: "登出失败！"
+			// 		});
+			// 	});
 		},
 		modify() {
 			const password = this.formCustom.password;
